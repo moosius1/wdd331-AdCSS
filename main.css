@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+h1,h2{
+    font-family: "Lora";
+}
+
+body{
+    font-family: Helvetica,Arial, Helvetica, sans-serif;
+}
+
+header{
+    background-color: #6495ED;
+    border:16pt solid #6495ED;
+    
+}
+
+body{
+    background-color: #FAEBD7;
+    margin-top:-20px;
+    
+    
+}
+
+header{
+    
+    text-align: right;
+    margin-right:-8pt;
+    margin-left:-8pt;
+    padding-top:24pt;
+    padding-bottom:16pt;
+    
+}
+ul{
+    list-style: none;
+    
+}
+
+li{
+    margin-top: 10pt;
+}
+
+article{
+    background-color: white;
+    margin-top:20pt;
+    margin-left:5pt;
+    margin-right:5pt;
+}
+
+header a:link{
+    color:#FAEBD7;
+    text-decoration: none;
+    
+}
+header a:hover{
+    color:white;
+    text-decoration: underline;
+    
+}
+header a:visited{
+    color:#FAEBD7;
+    text-decoration: none;
+}
+
+header a:active{
+    color:#DEB887;
+}
+
+p a:link{
+    color:#6495ED;
+    text-decoration: none;
+}
+p a:visited{
+    color:#6495ED;
+    text-decoration: none;
+}
+
+p a:active{
+    color:#DEB887;
+}
+
+p a:hover{
+    text-decoration: underline;
+}
+
+h2 a:link{
+    color:black;
+    text-decoration: none;
+    padding-left:16pt;
+    float:right;
+    padding-bottom:40pt;
+}
+
+h2 a:visited{
+    color: black;
+    text-decoration: none;
+}
+
+h2 a:active{
+    color:#DEB887;
+}
+
+h2 a:hover{
+    color:#6495ED;
+}
+
+.post-date{
+    padding-top:16pt;
+    padding-left:16pt;
+    color:gray;
+}
+
+figure{
+    
+    text-align:center;
+}
+
+img{
+    width:80%;
+}
+
+p{
+    padding-left: 16pt;
+    padding-bottom: 32pt;
+}
+
+@media only screen and (min-width: 500px){
+
+    body div{
+        display:grid;
+        grid-template-columns: 275px auto;
+    }
+
+    h2 a:link{
+        color:black;
+        text-decoration: none;
+        padding-left:16pt;
+        float:left;
+        padding-bottom:40pt;
+    }
+
+    img{
+        width:40%;
+        
+    }
+
+    article{
+        background-color: white;
+        margin-top:50pt;
+        margin-left:50pt;
+        margin-right:40pt;
+    }
+
+    figure{
+        padding-top:70pt;
+    }
+
+   
+
+
+}
