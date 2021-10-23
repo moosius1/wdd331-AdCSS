@@ -1,0 +1,149 @@
+@import "https://fonts.googleapis.com/css2?family=Lora&display=swap";
+//variables for scss
+$link_color:black;
+$link_active:#DEB887;
+$primary_color:#6495ED;
+$secondary_color:#FAEBD7;
+$tertiary_color:#FFFFFF;
+
+
+
+
+
+
+
+h1 {
+	font-family: "Lora";
+}
+h2 {
+	font-family: "Lora";
+	a {
+		&:link {
+			color: $link_color;
+			text-decoration: none;
+			padding-left: 16pt;
+			float: right;
+			padding-bottom: 40pt;
+		}
+		&:visited {
+			color: $link_color;
+			text-decoration: none;
+		}
+		&:active {
+			color: $link_active;
+		}
+		&:hover {
+			color: $primary_color;
+		}
+	}
+}
+body {
+	font-family: Helvetica,Arial, Helvetica, sans-serif;
+	background-color: $secondary_color;
+	margin-top: -20px;
+}
+header {
+	background-color: $primary_color;
+	border: 16pt solid $primary_color;
+	text-align: right;
+	margin-right: -8pt;
+	margin-left: -8pt;
+	padding-top: 24pt;
+	padding-bottom: 16pt;
+	a {
+		&:link {
+			color: $secondary_color;
+			text-decoration: none;
+		}
+		&:hover {
+			color: $tertiary_color;
+			text-decoration: underline;
+		}
+		&:visited {
+			color: $secondary_color;
+			text-decoration: none;
+		}
+		&:active {
+			color: $link_active;
+		}
+	}
+}
+ul {
+	list-style: none;
+}
+li {
+	margin-top: 10pt;
+}
+article {
+	background-color: $tertiary_color;
+	margin-top: 20pt;
+	margin-left: 5pt;
+	margin-right: 5pt;
+}
+p {
+	a {
+		&:link {
+			color: $primary_color;
+			text-decoration: none;
+		}
+		&:visited {
+			color: $primary_color;
+			text-decoration: none;
+		}
+		&:active {
+			color: $link_active;
+		}
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	padding-left: 16pt;
+	padding-bottom: 32pt;
+}
+.post-date {
+	padding-top: 16pt;
+	padding-left: 16pt;
+	color: gray;
+}
+figure {
+	text-align: center;
+}
+img {
+	width: 80%;
+}
+
+@mixin left-side-menu-layout() {
+	display:grid;
+	grid-template-columns:275px auto;
+	
+}
+@media only screen and (min-width: 500px) {
+	body {
+		div {
+			@include left-side-menu-layout;
+		}
+	}
+	h2 {
+		a {
+			&:link {
+				color: $link_color;
+				text-decoration: none;
+				padding-left: 16pt;
+				float: left;
+				padding-bottom: 40pt;
+			}
+		}
+	}
+	img {
+		width: 40%;
+	}
+	article {
+		background-color: $tertiary_color;
+		margin-top: 50pt;
+		margin-left: 50pt;
+		margin-right: 40pt;
+	}
+	figure {
+		padding-top: 70pt;
+	}
+}
