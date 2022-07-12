@@ -16,14 +16,14 @@ Queues are a type of data structure that stores items First in First out. This m
 
 ## Examples
 
-'''
+```
 #initialize the queue
 exampleQueue = []
 
 #this is basically now an empty line at the grocery store, no one is in it, #though it still exists 
 
 
-'''
+```
 
 
 
