@@ -11,7 +11,7 @@ Most queue operations have a performance of O(1) meaning that no matter the size
 Queues are a type of data structure that stores items First in First out. This means that the first item added into the queue will be processed first, and the last item added to the queue will be processed last. I like to relate this to being on hold with a company over the phone. There will most likely be a number of different callers calling into the company, but the person who is next in line will have their call answered first.
 
 
-
+![Tux, the Linux mascot]([/pictures/queue.png](https://www.section.io/engineering-education/queue-data-structure-python/queue.png))
 
 
 ## Examples
