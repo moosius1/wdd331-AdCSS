@@ -18,10 +18,32 @@ Queues are a type of data structure that stores items First in First out. This m
 
 ```
 #initialize the queue
-exampleQueue = []
+exampleQueue = [];
 
 # this is basically now an empty line at the grocery store,
 # no one is in it, though it still exists 
+
+# lets say someone gets in line
+
+exampleQueue.append(1);
+
+# while the first person is getting checked out, 2 more people come into the queue
+
+exampleQueue.append(2);
+exampleQueue.append(3);
+
+# with that the line looks like this
+# [1,2,3];
+
+# lets say that the first person is finally done;
+
+# the function would then need to remove the first person from the queue;
+
+exampleQueue.pop(0);
+
+# with that the line now appears as 
+# [2,3];
+
 
 
 ```
@@ -30,14 +52,40 @@ exampleQueue = []
 
 ## Operations used with Queues
 
-enqueue(value)
+enqueue(value): Adds to the queue starting with the first available space and increasing as needed.
+```
+exampleQueue.append(value);
+```
 
-dequeue()
+dequeue(): Used to remove from the front of the queue, or to remove at a specific index from the queue.
+```
+exampleQueue.pop(value);
+del exampleQueue[index];
 
-size()
+``` 
 
-empty()
+size(): Used to determine the size or length of the queue. 
+```
+len(exampleQueue);
+```
 
 
+empty(): pretty self explanitory, but it is a boolean operation returning either true or false depending if the queue contains values or not. 
+
+```
+if len(exampleQueue) == 0:
+    doSomething();
+```
+
+full(): oposite of empty() operation, can check to see if the queue contains a certain number of values, or if it contains anything at all. 
+
+```
+if len(exampleQueue) < 0: 
+    doSomething();
+
+if len(exampleQueue) == x:
+    doSomethingElse();
+    
+```
 
 ## Video walkthrough on Youtube
