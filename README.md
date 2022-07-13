@@ -52,32 +52,32 @@ exampleQueue.pop(0);
 
 ## Operations used with Queues
 
-enqueue(value): Adds to the queue starting with the first available space and increasing as needed.
+enqueue(value): Adds to the queue starting with the first available space and increasing as needed. O(1) performance
 ```
 exampleQueue.append(value);
 ```
 
-dequeue(): Used to remove from the front of the queue, or to remove at a specific index from the queue.
+dequeue(): Used to remove from the front of the queue, or to remove at a specific index from the queue. O(n) performance
 ```
 exampleQueue.pop(value);
 del exampleQueue[index];
 
 ``` 
 
-size(): Used to determine the size or length of the queue. 
+size(): Used to determine the size or length of the queue. O(1) performance
 ```
 len(exampleQueue);
 ```
 
 
-empty(): pretty self explanitory, but it is a boolean operation returning either true or false depending if the queue contains values or not. 
+empty(): pretty self explanitory, but it is a boolean operation returning either true or false depending if the queue contains values or not. O(1) performance
 
 ```
 if len(exampleQueue) == 0:
     doSomething();
 ```
 
-full(): oposite of empty() operation, can check to see if the queue contains a certain number of values, or if it contains anything at all. 
+full(): oposite of empty() operation, can check to see if the queue contains a certain number of values, or if it contains anything at all. O(1) performance
 
 ```
 if len(exampleQueue) < 0: 
@@ -88,4 +88,6 @@ if len(exampleQueue) == x:
     
 ```
 
-## Video walkthrough on Youtube
+## Video walkthrough on Youtube by Joe James:
+
+[Python Queues](https://youtu.be/XLXWidXVRJk)
