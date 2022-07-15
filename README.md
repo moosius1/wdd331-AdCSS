@@ -1,133 +1,105 @@
-# Linked Lists
-You likely have previously used lists in python or other languages, so that knowledge will be very useful in understanding linked lists. If you haven't I would suggest this guide [Lists and arrays in python](https://www.w3schools.com/python/python_lists.asp)
+# Queues
 
-Queues, stacks, sets and map all base their storage using "contiguous" memory. This means that each item in them is set immediately after the previous item. You can think of this as a 1 by 1 increasing method. 
+Lines. We all have been in them before. When they run properly, it makes everyone happy there is order and regulation in the world, but when they don't, people get frustrated, tired and impatient. 
 
-Linked lists on the other hand store data at random within the list. Each element has a particular and specific position within the array without specific order. 
+Queues are the savior of waiting lines. They can ensure that one set of data is specifically next in line no matter how many other people hop in line. Everything has a place in the queue. 
 
-These elements, known as "nodes" have the value of the element and are linked to the next node in the list. The links to the next node are referred to as "pointers". Each list has both a head and a tail, meaning that the node in first position is it's head, and the node last in position is the tail. 
-
-Single Linked lists contain this structure and are only connected one way from node to node. Each node only having one pointer forward to the next node. 
-
-[Linked Lists Image](/pictures/linkedlists2.jpeg)
-
-Double Linked Lists on the other hand are connected by two pointers on each node. One pointing forward to the next node, the other pointing backwards to the previous node. 
-
-Using a single or double linked list, it has the same complexity for their operation. Accessing, or getting a particular value from a linked list requires O(n) complexity to find the node. This is because you need to find the particular value within the list. This means the insert() operation when not at the head or tail and the remove() operation when not at the head or tail both are O(n) complexity. 
-
-However, when inserting at the head or tail, or deleting from the head or tail is only O(1) time. Obtaining the size of the link as well as checking if the list contains values also is O(1) complexity. 
+Most queue operations have a performance of O(1) meaning that no matter the size of your queue you can get almost instant results. The operators that have this performance are appending to the queue (enqueue), getting the size of the queue (size()), checking if the queue is empty (empty()). The only exception is the dequeue which if your queue is larger will take longer to complete making it O(n).  
 
 ## Purposes and usage
 
-One of the most applicable examples of a linked list data structure is a Music player. 
+Queues are a type of data structure that stores items First in First out. This means that the first item added into the queue will be processed first, and the last item added to the queue will be processed last. I like to relate this to being on hold with a company over the phone. There will most likely be a number of different callers calling into the company, but the person who is next in line will have their call answered first.
 
-Each song in the list has both a previous and a next song, and you can start listening anywhere in the list. If it is a playlist structure you can insert and remove songs from your playlist as well. 
+
+![Queue Visual Aide](/pictures/queue.png)
+
 
 ## Examples
 
 ```
-# initializing a linked list as a class
+#initialize the queue
+exampleQueue = [];
 
-class exampleLinkList:
-    """
-        after creating the core structure we need to define the structure of a linked list. Lets start with a Node. 
-    """
-    class Node:
-        def __init__(self, data):
-            self.data = data
-            self.next = None
-            self.prev = None
-    def __init__(self):
-        #start an empty list
-        self.head = None
-        self.tail = None
+# this is basically now an empty line at the grocery store,
+# no one is in it, though it still exists 
+
+# lets say someone gets in line
+
+exampleQueue.append(1);
+
+# while the first person is getting checked out, 2 more people come into the queue
+
+exampleQueue.append(2);
+exampleQueue.append(3);
+
+# with that the line looks like this
+# [1,2,3];
+
+# lets say that the first person is finally done;
+
+# the function would then need to remove the first person from the queue;
+
+exampleQueue.pop(0);
+
+# with that the line now appears as 
+# [2,3];
+
+
+
+```
+
+## Problem: 
+
+This is a simple test to see if you understand the basic structure of how a FIFO type queue works. 
+
+Solution is included in the file
+
+[Problem File](/py%20files/queueproblem.py)
+
+
+## Operations used with Queues
+
+enqueue(value): Adds to the queue starting with the first available space and increasing as needed. O(1) performance
+```
+exampleQueue.append(value);
+```
+
+dequeue(): Used to remove from the front of the queue, or to remove at a specific index from the queue. O(n) performance
+```
+exampleQueue.pop(value);
+del exampleQueue[index];
+
+``` 
+
+size(): Used to determine the size or length of the queue. O(1) performance
+```
+len(exampleQueue);
+```
+
+
+empty(): pretty self explanitory, but it is a boolean operation returning either true or false depending if the queue contains values or not. O(1) performance
+
+```
+if len(exampleQueue) == 0:
+    doSomething();
+```
+
+full(): oposite of empty() operation, can check to see if the queue contains a certain number of values, or if it contains anything at all. O(1) performance
+
+```
+if len(exampleQueue) < 0: 
+    doSomething();
+
+if len(exampleQueue) == x:
+    doSomethingElse();
     
 ```
 
-After initializing the list you can then move on to using specific operations to insert into the list at the head, tail, or middle. 
+## Video walkthrough on Youtube by Joe James:
 
-```
-# inserts node at front of the Linked-List
-def insert_head(self, value):
+[Python Queues](https://youtu.be/XLXWidXVRJk)
 
-    new_node = exampleLinkList.Node(value)
 
-    if self.head is None:
-        self.head = new_node
-        self.tail = new_node
+## Images referenced can be found here:
 
-    else:
-        new_node.next = self.head
-        self.head.prev = new_node
-        self.head = new_node
-
-# you can also use this method to insert a node at the tail of the linked-list
-def insert_tail(self, value):
-    new_node = exampleLinkList.Node(value)
-
-    if self.tail is None:
-        self.head = new_node
-        self.tail = new_node
-    
-    else:
-        new_node.prev = self.tail
-        self.tail.next = new_node
-        self.tail = new_node
-
-```
-
-The last example we will show for this tutorial is how to remove a node that contains a specific value. This is because this it is a more complex operation done in a linked list. 
-
-```
-def replace(self, old_value, new_value):
-
-    current = self.head
-    while current is not None:
-        if current.data == old_value:
-            current.data == new_value
-            current = current.next
-
-            if current.data == old_value:
-            current.data = new_value
-
-            return
-            current == current.next
-
-```
-
-## Operations used with linked lists
-
-insertAtHead(value): Inserts new node at the head of the linked list. Performance O(1)
-```
-exampleLinkList.appendleft(value);
-```
-insertAtTail(value) Inserts new node at the tail of the linked list. Performance O(1)
-```
-exampleLinkList.append(value);
-```
-insert(i,value): Inserts value after i, Performance O(n) depending on how large your linked list is. 
-```
-exampleLinkList.insert(i,value);
-```
-deleteHead(): Deletes the head from the linked list. Performance of O(1)
-```
-exampleLinkList.popleft();
-```
-deleteTail(): Deletes the tail from the linked list. Performance of O(1)
-```
-exampleLinkList.pop();
-```
-delete(i): Deletes specific index at value "i". This performance is more complex as it takes O(n) time to look through linked list one item at a time.
-```
-del exampleLinkList[i]
-```
-size()/ Length: Used to find length of the linked list. Performance is in O(n) time. 
-```
-len(exampleLinkList);
-```
-
-## References
-
-[Lists and arrays in python](https://www.w3schools.com/python/python_lists.asp)
-
-[Images found](https://kodr.me/en/linked-list-intro)
+[Queue Image](https://www.section.io/engineering-education/queue-data-structure-python/)
